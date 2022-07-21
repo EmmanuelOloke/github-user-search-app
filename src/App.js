@@ -1,7 +1,14 @@
 import React from 'react';
-import { Box, Text, Input, Button, Image, Icon } from '@chakra-ui/react';
+import { Box, Text, Input, Button, Image, Icon, Link } from '@chakra-ui/react';
 
-import { FaMoon, FaSearch } from 'react-icons/fa';
+import {
+  FaMoon,
+  FaSearch,
+  FaMapMarkerAlt,
+  FaLink,
+  FaTwitter,
+  FaBuilding,
+} from 'react-icons/fa';
 
 import octocat from './image/octocat.png';
 
@@ -110,6 +117,50 @@ function App() {
                   <Text fontSize="2xl" fontWeight="bold">
                     9
                   </Text>
+                </Box>
+              </Box>
+
+              <Box display="flex" flexDirection="row" gap={10} mt={10}>
+                <Box display="flex" flexDirection="column">
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    gap={5}
+                  >
+                    <Icon as={FaMapMarkerAlt} />
+                    <Text>San Francisco</Text>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    gap={5}
+                  >
+                    <Icon as={FaLink} />
+                    <Link>https://github.blog</Link>
+                  </Box>
+                </Box>
+
+                <Box display="flex" flexDirection="column">
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    gap={5}
+                  >
+                    <Icon as={FaTwitter} />
+                    <Text>Not Available</Text>
+                  </Box>
+                  <Box
+                    display="flex"
+                    flexDirection="row"
+                    alignItems="center"
+                    gap={5}
+                  >
+                    <Icon as={FaBuilding} />
+                    <Text>@github</Text>
+                  </Box>
                 </Box>
               </Box>
             </Box>
