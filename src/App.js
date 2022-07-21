@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text, IconButton, Input, Button, Image } from '@chakra-ui/react';
+import { Box, Text, Input, Button, Image, Icon } from '@chakra-ui/react';
 
 import { FaMoon, FaSearch } from 'react-icons/fa';
 
@@ -25,7 +25,12 @@ function App() {
           <Text fontWeight="bold" fontSize="2xl">
             devfinder
           </Text>
-          <IconButton icon={<FaMoon />} isRound="true" />
+          <Box display="flex" flexDirection="row" alignItems="center">
+            <Text fontWeight="bold" mr={2}>
+              DARK
+            </Text>
+            <Icon as={FaMoon} fontSize="20" />
+          </Box>
         </Box>
 
         <Box
