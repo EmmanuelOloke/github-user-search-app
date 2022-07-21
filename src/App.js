@@ -20,7 +20,9 @@ function App() {
           justifyContent="space-between"
           my={8}
         >
-          <Text>devfinder</Text>
+          <Text fontWeight="bold" fontSize="2xl">
+            devfinder
+          </Text>
           <IconButton icon={<FaMoon />} isRound="true" />
         </Box>
 
