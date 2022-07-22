@@ -20,6 +20,7 @@ function App() {
       display="flex"
       justifyContent="center"
       alignItems="center"
+      backgroundColor="#f4f7ff"
     >
       <Box w={700}>
         <Box
@@ -64,6 +65,7 @@ function App() {
           py="6"
           borderRadius="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+          backgroundColor="#ffffff"
         >
           <Box
             display="flex"
