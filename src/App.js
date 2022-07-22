@@ -231,7 +231,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaMapMarkerAlt} />
-                    <Text>San Francisco</Text>
+                    <Text>{user.location}</Text>
                   </Box>
                   <Box
                     display="flex"
