@@ -28,7 +28,7 @@ import {
 
 import moment from 'moment';
 
-import octocat from './image/octocat.png';
+// import octocat from './image/octocat.png';
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -63,6 +63,7 @@ function App() {
       const user = await response.json();
       if (response.status === 200) {
         setUser(user);
+        console.log(user);
       }
     } catch (error) {
       console.log('Something went wrong while fetching user.', error);
@@ -152,7 +153,7 @@ function App() {
           display="flex"
           flexDirection="column"
           px="10"
-          py="6"
+          py="10"
           borderRadius="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
           backgroundColor=""
@@ -163,26 +164,23 @@ function App() {
             alignItems="flex-start"
             justifyContent="space-between"
           >
-            <Image src={octocat} w="7rem" borderRadius="50%" mr={10} />
+            <Image src={user.avatar_url} w="7rem" borderRadius="50%" mr={5} />
 
             <Box display="flex" flexDirection="column">
-              <Box display="flex" flexDirection={{ lg: 'row' }} mb={5}>
-                <Box
-                  mr={{
-                    sm: '25',
-                    md: '28',
-                    lg: '35',
-                    xl: '28',
-                    base: '25',
-                  }}
-                >
+              <Box
+                display="flex"
+                flexDirection={{ lg: 'row' }}
+                mb={5}
+                justifyContent="space-between"
+              >
+                <Box mr={{}}>
                   <Text fontWeight="bold" fontSize="2xl">
                     {user.name}
                   </Text>
                   <Text color="blue">@{user.login}</Text>
                 </Box>
 
-                <Box mt={{ lg: '1' }}>
+                <Box mt={{ sm: '1', lg: '1', xl: '1', base: '1' }}>
                   Joined {moment(user?.created_at).format('D MMMM YYYY')}
                 </Box>
               </Box>
@@ -260,7 +258,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaBuilding} />
-                    <Text>{user.company || 'Not Available'}</Text>
+                    <Text>{user.company || 'No Company'}</Text>
                   </Box>
                 </Box>
               </Box>
