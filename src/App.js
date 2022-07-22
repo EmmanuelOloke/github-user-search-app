@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useState } from 'react';
 
@@ -26,6 +26,8 @@ import {
   FaBuilding,
 } from 'react-icons/fa';
 
+import moment from 'moment';
+
 import octocat from './image/octocat.png';
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
   const toast = useToast();
 
   const [inputContent, setInputContent] = useState('');
+
+  const [user, setUser] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,8 +52,27 @@ function App() {
       });
       return;
     }
-    console.log(inputContent);
+    fetchUser(inputContent);
   };
+
+  const fetchUser = async (inputContent = 'octocat') => {
+    try {
+      const response = await fetch(
+        `https://api.github.com/users/${inputContent}`
+      );
+      const user = await response.json();
+      if (response.status === 200) {
+        setUser(user);
+        console.log(user);
+      }
+    } catch (error) {
+      console.log('Something went wrong while fetching user.', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
   return (
     <Box
@@ -155,15 +178,17 @@ function App() {
                   }}
                 >
                   <Text fontWeight="bold" fontSize="2xl">
-                    The Octocat
+                    {user.name}
                   </Text>
-                  <Text color="blue">@octocat</Text>
+                  <Text color="blue">@{user.login}</Text>
                 </Box>
 
-                <Box mt={{ lg: '1' }}>Joined 25 Jan 2011</Box>
+                <Box mt={{ lg: '1' }}>
+                  Joined {moment(user?.created_at).format('D MMMM YYYY')}
+                </Box>
               </Box>
 
-              <Text>This profile has no bio.</Text>
+              <Text>{(user.bio = 'This user has no bio')}</Text>
 
               <Box
                 display="flex"
