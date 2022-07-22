@@ -33,6 +33,8 @@ function App() {
 
   const toast = useToast();
 
+  const [inputContent, setInputContent] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -42,13 +44,12 @@ function App() {
         status: 'error',
         duration: 5000,
         isClosable: true,
+        position: 'top',
       });
       return;
     }
-    console.log('Something is happening');
+    console.log(inputContent);
   };
-
-  const [inputContent, setInputContent] = useState('');
 
   return (
     <Box
