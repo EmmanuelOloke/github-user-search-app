@@ -52,7 +52,7 @@ function App() {
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <FaSearch color="blue" fontSize="30px" fontWeight="normal" />
-          <Input placeholder="Search GitHub username..." py="" />
+          <Input placeholder="Search GitHub username..." py="" border="none" />
           <Button colorScheme="blue" color="white" px="7" py="6" type="submit">
             Search
           </Button>
