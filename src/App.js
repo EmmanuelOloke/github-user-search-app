@@ -210,7 +210,7 @@ function App() {
                 <Box display="flex" flexDirection="column">
                   <Text fontSize="sm">Followers</Text>
                   <Text fontSize="2xl" fontWeight="bold">
-                    6433
+                    {user.followers}
                   </Text>
                 </Box>
 
