@@ -63,7 +63,6 @@ function App() {
       const user = await response.json();
       if (response.status === 200) {
         setUser(user);
-        console.log(user);
       }
     } catch (error) {
       console.log('Something went wrong while fetching user.', error);
@@ -261,7 +260,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaBuilding} />
-                    <Text>@github</Text>
+                    <Text>{user.company || 'Not Available'}</Text>
                   </Box>
                 </Box>
               </Box>
