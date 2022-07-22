@@ -15,19 +15,19 @@ import octocat from './image/octocat.png';
 function App() {
   return (
     <Box
-      height="100%"
-      width="100%"
+      height="100vh"
+      width="100vw"
       display="flex"
       justifyContent="center"
       alignItems="center"
     >
-      <Box w={700} border="1px" borderColor="red.200">
+      <Box w={700}>
         <Box
           display="flex"
           alignItems="center"
           flexDirection="row"
           justifyContent="space-between"
-          mb={4}
+          mb={8}
         >
           <Text fontWeight="bold" fontSize="2xl">
             devfinder
@@ -41,14 +41,14 @@ function App() {
         </Box>
 
         <Box
-          borderColor="red"
-          border="1px"
           display="flex"
           alignItems="center"
           gap={3}
           backgroundColor="#ffffff"
           p={3}
           borderRadius="lg"
+          mb={5}
+          boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <FaSearch color="blue" fontSize="30px" fontWeight="normal" />
           <Input placeholder="Search GitHub username..." py="" />
@@ -57,7 +57,14 @@ function App() {
           </Button>
         </Box>
 
-        <Box display="flex" flexDirection="column" px="10" py="6">
+        <Box
+          display="flex"
+          flexDirection="column"
+          px="10"
+          py="6"
+          borderRadius="lg"
+          boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+        >
           <Box
             display="flex"
             flexDirection="row"
