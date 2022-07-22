@@ -217,7 +217,7 @@ function App() {
                 <Box display="flex" flexDirection="column">
                   <Text fontSize="sm">Following</Text>
                   <Text fontSize="2xl" fontWeight="bold">
-                    9
+                    {user.following}
                   </Text>
                 </Box>
               </Box>
