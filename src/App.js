@@ -252,7 +252,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaTwitter} />
-                    <Text>Not Available</Text>
+                    <Text>{user.twitter_username || 'Not Available'}</Text>
                   </Box>
                   <Box
                     display="flex"
