@@ -1,8 +1,24 @@
 import React from 'react';
-import { Box, Text, Input, Button, Image, Icon, Link } from '@chakra-ui/react';
+
+import { useState } from 'react';
+
+import {
+  Box,
+  Text,
+  Input,
+  Button,
+  Image,
+  Icon,
+  IconButton,
+  Link,
+  useColorMode,
+  HStack,
+  useToast,
+} from '@chakra-ui/react';
 
 import {
   FaMoon,
+  FaSun,
   FaSearch,
   FaMapMarkerAlt,
   FaLink,
@@ -13,6 +29,27 @@ import {
 import octocat from './image/octocat.png';
 
 function App() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const toast = useToast();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!inputContent) {
+      toast({
+        title: 'Please enter a GitHub username',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+    console.log('Something is happening');
+  };
+
+  const [inputContent, setInputContent] = useState('');
+
   return (
     <Box
       height="100vh"
@@ -20,7 +57,7 @@ function App() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      backgroundColor="#f4f7ff"
+      backgroundColor=""
     >
       <Box w={700}>
         <Box
@@ -33,11 +70,20 @@ function App() {
           <Text fontWeight="bold" fontSize="2xl">
             devfinder
           </Text>
-          <Box display="flex" flexDirection="row" alignItems="center">
-            <Text fontWeight="bold" mr={2}>
-              DARK
+          <Box
+            display="flex"
+            flexDirection="row"
+            alignItems="center"
+            onClick={toggleColorMode}
+          >
+            <Text fontWeight="bold" mr={2} cursor="pointer">
+              {colorMode === 'light' ? 'DARK' : 'LIGHT'}
             </Text>
-            <Icon as={FaMoon} fontSize="20" />
+            <IconButton
+              backgroundColor="none"
+              icon={colorMode === 'light' ? <FaMoon /> : <FaSun />}
+              fontSize="20"
+            />
           </Box>
         </Box>
 
@@ -45,17 +91,38 @@ function App() {
           display="flex"
           alignItems="center"
           gap={3}
-          backgroundColor="#ffffff"
+          backgroundColor=""
           p={3}
           borderRadius="lg"
           mb={5}
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
-          <FaSearch color="blue" fontSize="30px" fontWeight="normal" />
-          <Input placeholder="Search GitHub username..." py="" border="none" />
-          <Button colorScheme="blue" color="white" px="7" py="6" type="submit">
-            Search
-          </Button>
+          <form onSubmit={handleSubmit}>
+            <HStack
+              width="2xl"
+              display="flex"
+              flexDirection="row"
+              justifyContent="space-evenly"
+            >
+              <FaSearch color="blue" fontSize="30px" fontWeight="normal" />
+              <Input
+                placeholder="Search GitHub username..."
+                py=""
+                border="none"
+                value={inputContent}
+                onChange={(e) => setInputContent(e.target.value)}
+              />
+              <Button
+                colorScheme="blue"
+                color="white"
+                px="7"
+                py="6"
+                type="submit"
+              >
+                Search
+              </Button>
+            </HStack>
+          </form>
         </Box>
 
         <Box
@@ -65,7 +132,7 @@ function App() {
           py="6"
           borderRadius="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-          backgroundColor="#ffffff"
+          backgroundColor=""
         >
           <Box
             display="flex"
