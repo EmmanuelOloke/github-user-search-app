@@ -240,7 +240,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaLink} />
-                    <Link>https://github.blog</Link>
+                    <Link>{user.blog}</Link>
                   </Box>
                 </Box>
 
