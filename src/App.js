@@ -188,7 +188,7 @@ function App() {
                 </Box>
               </Box>
 
-              <Text>{(user.bio = 'This user has no bio')}</Text>
+              <Text>{user.bio || 'This user has no bio'}</Text>
 
               <Box
                 display="flex"
