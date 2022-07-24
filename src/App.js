@@ -254,7 +254,7 @@ function App() {
                     <Icon as={FaTwitter} />
                     <Text>
                       {user.twitter_username || (
-                        <Text opacity="0.5">Not Available</Text>
+                        <Text opacity="0.5">Not Found</Text>
                       )}
                     </Text>
                   </Box>
