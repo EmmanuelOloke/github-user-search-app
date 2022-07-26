@@ -157,20 +157,15 @@ function App() {
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
           backgroundColor=""
         >
-          <Box
-            display="flex"
-            flexDirection="row"
-            alignItems="flex-start"
-            justifyContent="space-between"
-          >
+          <Box display="flex" flexDirection="row" alignItems="flex-start">
             <Image
-              mr="5rem"
+              mr="2rem"
               src={user.avatar_url}
               w="7rem"
               borderRadius="50%"
             />
 
-            <Box display="flex" flexDirection="column">
+            <Box display="flex" flexDirection="column" width="100%">
               <Box
                 display="flex"
                 flexDirection={{ lg: 'row' }}
