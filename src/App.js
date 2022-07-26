@@ -181,7 +181,7 @@ function App() {
                 </Box>
 
                 <Box
-                  mt={{ sm: '1', lg: '1', xl: '1', base: '1' }}
+                  mt={{ sm: '1', lg: '2', xl: '2', base: '1' }}
                   fontSize="sm"
                 >
                   Joined {moment(user?.created_at).format('D MMMM YYYY')}
