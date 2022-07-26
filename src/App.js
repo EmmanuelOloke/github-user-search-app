@@ -244,7 +244,9 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaLink} />
-                    <Link maxWidth="250">{user.blog}</Link>
+                    <Link maxWidth="250">
+                      {user.blog || <Text opacity="0.5">Not Available</Text>}
+                    </Link>
                   </Box>
                 </Box>
 
