@@ -240,7 +240,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaLink} />
-                    <Link maxWidth="200">{user.blog}</Link>
+                    <Link maxWidth="250">{user.blog}</Link>
                   </Box>
                 </Box>
 
