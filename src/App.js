@@ -98,6 +98,7 @@ function App() {
             flexDirection="row"
             alignItems="center"
             onClick={toggleColorMode}
+            _hover={{ color: 'gray' }}
           >
             <Text fontWeight="bold" mr={2} cursor="pointer">
               {colorMode === 'light' ? 'DARK' : 'LIGHT'}
