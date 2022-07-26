@@ -231,7 +231,11 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaMapMarkerAlt} />
-                    <Text>{user.location}</Text>
+                    <Text>
+                      {user.location || (
+                        <Text opacity="0.5">Not Available</Text>
+                      )}
+                    </Text>
                   </Box>
                   <Box
                     display="flex"
