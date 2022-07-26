@@ -232,9 +232,7 @@ function App() {
                   >
                     <Icon as={FaMapMarkerAlt} />
                     <Text>
-                      {user.location || (
-                        <Text opacity="0.5">Not Available</Text>
-                      )}
+                      {user.location || <Text opacity="0.5">No Location</Text>}
                     </Text>
                   </Box>
                   <Box
@@ -245,7 +243,7 @@ function App() {
                   >
                     <Icon as={FaLink} />
                     <Link maxWidth="250">
-                      {user.blog || <Text opacity="0.5">Not Available</Text>}
+                      {user.blog || <Text opacity="0.5">No Blog</Text>}
                     </Link>
                   </Box>
                 </Box>
@@ -272,7 +270,7 @@ function App() {
                   >
                     <Icon as={FaBuilding} />
                     <Text>
-                      {user.company || <Text opacity="0.5">Not Available</Text>}
+                      {user.company || <Text opacity="0.5">No Company</Text>}
                     </Text>
                   </Box>
                 </Box>
