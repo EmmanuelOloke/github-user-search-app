@@ -63,7 +63,6 @@ function App() {
       const user = await response.json();
       if (response.status === 200) {
         setUser(user);
-        console.log(user);
       }
     } catch (error) {
       console.log('Something went wrong while fetching user.', error);
@@ -164,7 +163,12 @@ function App() {
             alignItems="flex-start"
             justifyContent="space-between"
           >
-            <Image src={user.avatar_url} w="7rem" borderRadius="50%" mr={5} />
+            <Image
+              mr="5rem"
+              src={user.avatar_url}
+              w="7rem"
+              borderRadius="50%"
+            />
 
             <Box display="flex" flexDirection="column">
               <Box
@@ -199,6 +203,7 @@ function App() {
                 px={10}
                 py={5}
                 mt={10}
+                // gap={20}
               >
                 <Box display="flex" flexDirection="column">
                   <Text fontSize="sm">Repo</Text>
@@ -240,7 +245,7 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaLink} />
-                    <Link>{user.blog}</Link>
+                    <Link maxWidth="200">{user.blog}</Link>
                   </Box>
                 </Box>
 
@@ -265,7 +270,9 @@ function App() {
                     gap={5}
                   >
                     <Icon as={FaBuilding} />
-                    <Text>{user.company || 'No Company'}</Text>
+                    <Text>
+                      {user.company || <Text opacity="0.5">No company</Text>}
+                    </Text>
                   </Box>
                 </Box>
               </Box>
