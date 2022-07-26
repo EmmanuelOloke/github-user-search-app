@@ -272,7 +272,7 @@ function App() {
                   >
                     <Icon as={FaBuilding} />
                     <Text>
-                      {user.company || <Text opacity="0.5">No company</Text>}
+                      {user.company || <Text opacity="0.5">Not Available</Text>}
                     </Text>
                   </Box>
                 </Box>
