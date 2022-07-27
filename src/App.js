@@ -82,7 +82,7 @@ function App() {
       alignItems="center"
       backgroundColor=""
     >
-      <Box w={{ sm: 320, md: 480, lg: 670, xl: 700, base: 480 }}>
+      <Box w={{ sm: 320, md: 580, lg: 670, xl: 700, base: 480 }}>
         <Box
           display="flex"
           alignItems="center"
