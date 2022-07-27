@@ -173,13 +173,19 @@ function App() {
               w="100%"
             >
               <Box mr={{}}>
-                <Text fontWeight="bold" fontSize="2xl">
+                <Text
+                  fontWeight="bold"
+                  fontSize={{ sm: 'md', md: '2xl', lg: '2xl', base: 'md' }}
+                >
                   {user.name}
                 </Text>
                 <Text color="blue">@{user.login}</Text>
               </Box>
 
-              <Box mt={{ sm: '1', lg: '2', xl: '2', base: '1' }} fontSize="sm">
+              <Box
+                mt={{ sm: '1', lg: '2', xl: '2', base: '1' }}
+                fontSize={{ sm: 'xs', md: 'sm', lg: 'sm', base: 'xs' }}
+              >
                 Joined {moment(user?.created_at).format('D MMMM YYYY')}
               </Box>
             </Box>
