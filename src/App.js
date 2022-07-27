@@ -167,7 +167,7 @@ function App() {
 
             <Box
               display="flex"
-              flexDirection={{ sm: 'column', lg: 'row' }}
+              flexDirection={{ sm: 'column', lg: 'row', base: 'column' }}
               mb={5}
               justifyContent="space-between"
               w="100%"
