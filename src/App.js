@@ -82,7 +82,7 @@ function App() {
       alignItems="center"
       backgroundColor=""
     >
-      <Box w={700}>
+      <Box w={{ sm: 320, md: 480, lg: 670, xl: 700, base: 480 }}>
         <Box
           display="flex"
           alignItems="center"
@@ -123,7 +123,7 @@ function App() {
         >
           <form onSubmit={handleSubmit}>
             <HStack
-              width="2xl"
+              w={{ sm: 295, md: 450, lg: 645, xl: 670, base: 480 }}
               display="flex"
               flexDirection="row"
               justifyContent="space-evenly"
@@ -166,114 +166,117 @@ function App() {
               borderRadius="50%"
             />
 
-            <Box display="flex" flexDirection="column" width="100%">
-              <Box
-                display="flex"
-                flexDirection={{ lg: 'row' }}
-                mb={5}
-                justifyContent="space-between"
-              >
-                <Box mr={{}}>
-                  <Text fontWeight="bold" fontSize="2xl">
-                    {user.name}
-                  </Text>
-                  <Text color="blue">@{user.login}</Text>
-                </Box>
-
-                <Box
-                  mt={{ sm: '1', lg: '2', xl: '2', base: '1' }}
-                  fontSize="sm"
-                >
-                  Joined {moment(user?.created_at).format('D MMMM YYYY')}
-                </Box>
+            <Box
+              display="flex"
+              flexDirection={{ sm: 'column', lg: 'row' }}
+              mb={5}
+              justifyContent="space-between"
+              w="100%"
+            >
+              <Box mr={{}}>
+                <Text fontWeight="bold" fontSize="2xl">
+                  {user.name}
+                </Text>
+                <Text color="blue">@{user.login}</Text>
               </Box>
 
-              <Text>{user.bio || 'This user has no bio'}</Text>
+              <Box mt={{ sm: '1', lg: '2', xl: '2', base: '1' }} fontSize="sm">
+                Joined {moment(user?.created_at).format('D MMMM YYYY')}
+              </Box>
+            </Box>
+          </Box>
 
+          <Text>{user.bio || 'This user has no bio'}</Text>
+
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            boxShadow="2xl"
+            borderRadius="lg"
+            px={10}
+            py={5}
+            mt={10}
+            ml={{ lg: 150 }}
+          >
+            <Box display="flex" flexDirection="column">
+              <Text fontSize="sm">Repo</Text>
+              <Text fontSize="2xl" fontWeight="bold">
+                {user.public_repos}
+              </Text>
+            </Box>
+
+            <Box display="flex" flexDirection="column">
+              <Text fontSize="sm">Followers</Text>
+              <Text fontSize="2xl" fontWeight="bold">
+                {user.followers}
+              </Text>
+            </Box>
+
+            <Box display="flex" flexDirection="column">
+              <Text fontSize="sm">Following</Text>
+              <Text fontSize="2xl" fontWeight="bold">
+                {user.following}
+              </Text>
+            </Box>
+          </Box>
+
+          <Box
+            display="flex"
+            flexDirection="row"
+            gap={10}
+            mt={10}
+            ml={{ lg: 150 }}
+          >
+            <Box display="flex" flexDirection="column">
               <Box
                 display="flex"
                 flexDirection="row"
-                justifyContent="space-between"
-                boxShadow="rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"
-                borderRadius="lg"
-                px={10}
-                py={5}
-                mt={10}
+                alignItems="center"
+                gap={5}
               >
-                <Box display="flex" flexDirection="column">
-                  <Text fontSize="sm">Repo</Text>
-                  <Text fontSize="2xl" fontWeight="bold">
-                    {user.public_repos}
-                  </Text>
-                </Box>
-
-                <Box display="flex" flexDirection="column">
-                  <Text fontSize="sm">Followers</Text>
-                  <Text fontSize="2xl" fontWeight="bold">
-                    {user.followers}
-                  </Text>
-                </Box>
-
-                <Box display="flex" flexDirection="column">
-                  <Text fontSize="sm">Following</Text>
-                  <Text fontSize="2xl" fontWeight="bold">
-                    {user.following}
-                  </Text>
-                </Box>
+                <Icon as={FaMapMarkerAlt} />
+                <Text>
+                  {user.location || <Text opacity="0.5">No Location</Text>}
+                </Text>
               </Box>
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                gap={5}
+              >
+                <Icon as={FaLink} />
+                <Link maxWidth="250">
+                  {user.blog || <Text opacity="0.5">No Blog</Text>}
+                </Link>
+              </Box>
+            </Box>
 
-              <Box display="flex" flexDirection="row" gap={10} mt={10}>
-                <Box display="flex" flexDirection="column">
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    alignItems="center"
-                    gap={5}
-                  >
-                    <Icon as={FaMapMarkerAlt} />
-                    <Text>
-                      {user.location || <Text opacity="0.5">No Location</Text>}
-                    </Text>
-                  </Box>
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    alignItems="center"
-                    gap={5}
-                  >
-                    <Icon as={FaLink} />
-                    <Link maxWidth="250">
-                      {user.blog || <Text opacity="0.5">No Blog</Text>}
-                    </Link>
-                  </Box>
-                </Box>
-
-                <Box display="flex" flexDirection="column">
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    alignItems="center"
-                    gap={5}
-                  >
-                    <Icon as={FaTwitter} />
-                    <Text>
-                      {user.twitter_username || (
-                        <Text opacity="0.5">Not Available</Text>
-                      )}
-                    </Text>
-                  </Box>
-                  <Box
-                    display="flex"
-                    flexDirection="row"
-                    alignItems="center"
-                    gap={5}
-                  >
-                    <Icon as={FaBuilding} />
-                    <Text>
-                      {user.company || <Text opacity="0.5">No Company</Text>}
-                    </Text>
-                  </Box>
-                </Box>
+            <Box display="flex" flexDirection="column">
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                gap={5}
+              >
+                <Icon as={FaTwitter} />
+                <Text>
+                  {user.twitter_username || (
+                    <Text opacity="0.5">Not Available</Text>
+                  )}
+                </Text>
+              </Box>
+              <Box
+                display="flex"
+                flexDirection="row"
+                alignItems="center"
+                gap={5}
+              >
+                <Icon as={FaBuilding} />
+                <Text>
+                  {user.company || <Text opacity="0.5">No Company</Text>}
+                </Text>
               </Box>
             </Box>
           </Box>
