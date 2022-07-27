@@ -122,7 +122,7 @@ function App() {
         >
           <form onSubmit={handleSubmit}>
             <HStack
-              w={{ sm: 295, md: 560, lg: 645, xl: 670, base: 480 }}
+              w={{ sm: 360, md: 560, lg: 645, xl: 670, base: 360 }}
               display="flex"
               flexDirection="row"
               justifyContent="space-evenly"
