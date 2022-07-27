@@ -80,9 +80,8 @@ function App() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      backgroundColor=""
     >
-      <Box w={{ sm: 320, md: 580, lg: 670, xl: 700, base: 480 }}>
+      <Box w={{ sm: 380, md: 580, lg: 670, xl: 700, base: 380 }}>
         <Box
           display="flex"
           alignItems="center"
@@ -228,8 +227,8 @@ function App() {
 
           <Box
             display="flex"
-            flexDirection="row"
-            gap={10}
+            flexDirection={{ base: 'column', md: 'row', lg: 'row', xl: 'row' }}
+            gap={{ base: 1, md: 10, lg: 10, xl: 10 }}
             mt={10}
             ml={{ lg: 150 }}
           >
