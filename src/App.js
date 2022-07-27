@@ -161,7 +161,7 @@ function App() {
             <Image
               mr="2rem"
               src={user.avatar_url}
-              w="7rem"
+              w={{ sm: '5rem', md: '7rem', xl: '7rem', base: '5rem' }}
               borderRadius="50%"
             />
 
@@ -192,7 +192,7 @@ function App() {
           </Box>
 
           <Text
-            mt={{ sm: '4', lg: '-2rem', xl: '-2rem' }}
+            mt={{ sm: '3', lg: '-2rem', xl: '-2rem', base: '3' }}
             ml={{ lg: '9rem', xl: '9rem' }}
           >
             {user.bio || 'This user has no bio'}
@@ -206,7 +206,7 @@ function App() {
             borderRadius="lg"
             px={10}
             py={5}
-            mt={10}
+            mt={{ sm: 7, md: 10, xl: 10, base: 7 }}
             ml={{ lg: 150 }}
           >
             <Box display="flex" flexDirection="column">
