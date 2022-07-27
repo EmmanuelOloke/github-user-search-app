@@ -186,7 +186,12 @@ function App() {
             </Box>
           </Box>
 
-          <Text>{user.bio || 'This user has no bio'}</Text>
+          <Text
+            mt={{ sm: '4', lg: '-2rem', xl: '-2rem' }}
+            ml={{ lg: '9rem', xl: '9rem' }}
+          >
+            {user.bio || 'This user has no bio'}
+          </Text>
 
           <Box
             display="flex"
