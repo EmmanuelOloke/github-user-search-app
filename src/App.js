@@ -64,6 +64,16 @@ function App() {
       if (response.status === 200) {
         setUser(user);
       }
+      if (response.status === 404) {
+        toast({
+          title: 'GitHub username not found',
+          status: 'warning',
+          duration: 5000,
+          isClosable: true,
+          position: 'top',
+        });
+        return;
+      }
     } catch (error) {
       console.log('Something went wrong while fetching user.', error);
     }
