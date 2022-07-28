@@ -66,7 +66,7 @@ function App() {
       }
       if (response.status === 404) {
         toast({
-          title: 'GitHub username not found',
+          title: 'Username not found',
           status: 'warning',
           duration: 5000,
           isClosable: true,
