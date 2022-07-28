@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/github-user-search-app/static/css/main.426c54a4.css",
+    "main.js": "/github-user-search-app/static/js/main.cf8e5f95.js",
+    "static/media/space-mono-all-400-normal.woff": "/github-user-search-app/static/media/space-mono-all-400-normal.e06054fa861d3688228f.woff",
+    "static/media/space-mono-all-700-normal.woff": "/github-user-search-app/static/media/space-mono-all-700-normal.2b7ff8f5053228c6bfa1.woff",
+    "static/media/space-mono-latin-700-normal.woff2": "/github-user-search-app/static/media/space-mono-latin-700-normal.abaf4f58553bbd53c62f.woff2",
+    "static/media/space-mono-latin-400-normal.woff2": "/github-user-search-app/static/media/space-mono-latin-400-normal.332709685022fe85ce8a.woff2",
+    "static/media/space-mono-latin-ext-700-normal.woff2": "/github-user-search-app/static/media/space-mono-latin-ext-700-normal.d4faaf1411928a51a37a.woff2",
+    "static/media/space-mono-latin-ext-400-normal.woff2": "/github-user-search-app/static/media/space-mono-latin-ext-400-normal.f115f165d0cf160a0f0a.woff2",
+    "static/media/space-mono-vietnamese-400-normal.woff2": "/github-user-search-app/static/media/space-mono-vietnamese-400-normal.607a568ae2c04bc91877.woff2",
+    "static/media/space-mono-vietnamese-700-normal.woff2": "/github-user-search-app/static/media/space-mono-vietnamese-700-normal.1079c3af06fe697e09d6.woff2",
+    "index.html": "/github-user-search-app/index.html",
+    "main.426c54a4.css.map": "/github-user-search-app/static/css/main.426c54a4.css.map",
+    "main.cf8e5f95.js.map": "/github-user-search-app/static/js/main.cf8e5f95.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.426c54a4.css",
+    "static/js/main.cf8e5f95.js"
+  ]
+}
