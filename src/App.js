@@ -81,7 +81,7 @@ function App() {
       justifyContent="center"
       alignItems="center"
     >
-      <Box w={{ sm: 380, md: 580, lg: 670, xl: 700, base: 380 }}>
+      <Box w={{ sm: 380, md: 580, lg: 670, xl: 700, base: 360 }}>
         <Box
           display="flex"
           alignItems="center"
@@ -122,7 +122,7 @@ function App() {
         >
           <form onSubmit={handleSubmit}>
             <HStack
-              w={{ sm: 360, md: 560, lg: 645, xl: 670, base: 360 }}
+              w={{ sm: 360, md: 560, lg: 645, xl: 670, base: 340 }}
               display="flex"
               flexDirection="row"
               justifyContent="space-evenly"
@@ -151,7 +151,7 @@ function App() {
         <Box
           display="flex"
           flexDirection="column"
-          px="10"
+          px={{ sm: '5', md: '10', lg: '10', base: '5' }}
           py="10"
           borderRadius="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
