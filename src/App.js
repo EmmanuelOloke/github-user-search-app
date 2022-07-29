@@ -66,7 +66,7 @@ function App() {
       }
       if (response.status === 404) {
         toast({
-          title: 'Username not found',
+          title: 'Username Not Found',
           status: 'warning',
           duration: 5000,
           isClosable: true,
